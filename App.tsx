@@ -6,12 +6,12 @@ import Header from './components/Header/header';
 import Footer from './components/footer';
 import FogOverlay from './components/blackFop';
 import Card from './components/Card/card';
-import { styles } from './App';
+import { styles } from './AppStyle';
 
 // Cards Dara
-const cardsData = [
+const carouselData = [
   { image: require('./assets/dineIn.jpg'), description: 'Dine In' },
-  { image: require('./assets/movie.jpg'), description: 'Entertainment' },
+  { image: require('./assets/movie.jpg'), description: 'Dine In' },
   { image: require('./assets/shopping.jpg'), description: 'Dine In' },
 ];
 
@@ -43,12 +43,10 @@ const App: React.FC = () => {
               <Ionicons name="arrow-forward" color="black"></Ionicons>
             </View>
           </TouchableOpacity>
-          {/* Cards */}
-          <View style={styles.cardsContainer}>
-            {cardsData.map((card, index) => (
-              <Card key={index} image={card.image} description={card.description} />
-            ))}
-          </View>
+          {/* Carousel */}
+          <Card items={carouselData} />
+          <Card items={carouselData} />
+          <Card items={carouselData} />
         </ScrollView>
         <FogOverlay />
         <Footer />
